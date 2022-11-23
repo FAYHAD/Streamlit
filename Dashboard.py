@@ -16,7 +16,7 @@ def main():
     minScore, maxScore, threshold = utils.loadRatingSystem()
 
     ###Top frame###
-    col1, col2 = st.columns((1, 3))
+    col1, col2 = st.beta_columns((1, 3))
     with col1:
         st.image('img/logo.png', width=300)
     with col2:
@@ -46,7 +46,7 @@ def main():
         st.error(loanResult)
 
     ###Centre###
-    col1, col15, col2 = st.columns((2, 1, 2))
+    col1, col15, col2 = st.beta_columns((2, 1, 2))
     with col1:
         ### Gauge Score
         fig = utils.gauge_chart(predProba, minScore, maxScore, threshold)
@@ -62,7 +62,7 @@ def main():
             st.image('img/NOT_OK.png', width=400)
 
     ###Features importance globales et locales###
-    col1, col2 = st.columns((2))
+    col1, col2 = st.beta_columns((2))
     ###Features importance globales, col1/2###
     with col1:
         fig = utils.plotGlobalFeaturesImportance(model, dataRef, 10)
@@ -78,7 +78,7 @@ def main():
 
     ###Analyse mono et bidimensionnelle###
     ###Graphes illustrant la distribution###
-    col1, col2 = st.columns((2))
+    col1, col2 = st.beta_columns((2))
 
     with col1:
         feature1 = st.selectbox('Choix de la première caratéristique: ', df.index, index=0)
@@ -93,7 +93,7 @@ def main():
         st.write(fig)
 
     ###Scatter plot###
-    col1, col2 = st.columns(2)
+    col1, col2 = st.beta_columns(2)
     ###Scatter plot 2D###
     with col1:
         listValueCustomer = [[feature1, valueCustomer1], [feature2, valueCustomer2]]
