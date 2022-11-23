@@ -57,7 +57,7 @@ def main():
     with col2:
         ### Img OK/NOK
         if predExact:
-            st.image('img/ok.png', width=400)
+            st.image('img/OK.png', width=400)
         else:
             st.image('img/NOT_OK.png', width=400)
 
